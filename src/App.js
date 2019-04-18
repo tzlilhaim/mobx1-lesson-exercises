@@ -17,9 +17,9 @@ class App extends Component {
     return (
       <div className="App">
       {/* your code here
-      make sure to use the class names "listItem", "location", "editButton", and "deleteButton" 
+      make sure to use the class names "listItem", "location", 
+        "editButton", and "deleteButton" 
       */}  
-          <div id="home-background"></div>
       </div>
     );
   }

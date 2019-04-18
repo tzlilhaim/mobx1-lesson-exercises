@@ -1,14 +1,10 @@
 import { observable, action } from 'mobx'
+import { Item } from './Item'
 
-class Item {
-// your code here
-}
 
-let potatoes = new Item("Potatoes")
-
-class ShoppingList {
+export class ShoppingList {
     // your code here
-    list;
+    list = [];
     length;
     checkItem = () => {
         // your code here
@@ -24,7 +20,3 @@ class ShoppingList {
     } 
 }
 
-let groceryList = new ShoppingList()
-groceryList.list.push(potatoes)
-
-export default groceryList
