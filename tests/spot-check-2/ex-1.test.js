@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../../src/App';
-import { mount, render, shallow, configure} from 'enzyme';
+import { mount, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ShoppingList from '../../src/stores/ShoppingList'
+import {ShoppingList} from '../../src/stores/ShoppingList'
 
 
 configure({ adapter: new Adapter() });
@@ -20,13 +20,8 @@ describe("exercise1", () => {
       
     it('App is reading the mobx store list property', () => {
         const wrapper = mount(<App store ={groceryList}/>);
-        console.log(wrapper.props)
-        expect(wrapper.props().store.list).toBeDefined();
+        console.log(wrapper.props())
+        expect(wrapper.props().store.list, "Your App should have access to the mobx store's list property")
+            .toBeDefined();
     });
 })
-
-
-
-
-
-

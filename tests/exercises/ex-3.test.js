@@ -9,20 +9,27 @@ configure({ adapter: new Adapter() });
 let groceryList
 describe("exercise 3", () => {
     beforeAll(() => {
-        groceryList = new ShoppingList
+        groceryList = new ShoppingList()
+        groceryList.addItem("test")
     })
     it ('The store should have an editItem function that edits the location of a given item', () => {
-        groceryList.addItem("test")
         groceryList.editItem("test", "wonderland")
         const test = groceryList.list.find(i => i.name === "test")
-        expect(test.location).toBe("wonderland")
+        expect(test, "the editItem button should only edit the locaiton of an item")
+            .toBeDefined()
+        expect(test.location, "The store should have an editItem function that edits the location of a given item")
+            .toBe("wonderland")
     })
     it ('editItem function should be a MobX action', () => {
-        expect(groceryList.editItem.isMobxAction).toBeTruthy()
+        expect(groceryList.editItem.isMobxAction, "editItem function should be a MobX action")
+            .toBeTruthy()
     })
-    it('Edit button should be rendered per each list item and work on click', () => {
+    it('The edit button should be rendered per each list item and work on click', () => {
         const wrapper = mount(<App store = {groceryList}/>)
+        expect(wrapper.find('.editButton').length, "The edit button should be rendered with the class 'editItem'")
+            .toBeGreaterThan(0)
         let onClick = wrapper.find('.editButton').first().prop('onClick')
-        expect(onClick).toBeDefined()
+        expect(onClick, "The edit button should with each list item and work on click")
+            .toBeDefined()
     })
 })
