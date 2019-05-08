@@ -12,7 +12,7 @@ describe("exercise1", () => {
     })
     it ('groceryList class store should have an observable property "list"', () => {
         const store = groceryList;
-        expect(store, "You should have exported a class groceryList")
+        expect(store, "You should have exported a class groceryList (make sure not to delete code you were given)")
             .toBeDefined()
         expect(isObservable(store.list), "the list property should be observable")
             .toBeTruthy()

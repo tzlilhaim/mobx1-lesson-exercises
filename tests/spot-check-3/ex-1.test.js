@@ -18,7 +18,7 @@ describe("exercise1", () => {
         ReactDOM.render(<App store ={gorceryList} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-    it ('store should have a checkItem function that updates a given items completed property', () => {
+    it ('Store should have a checkItem function that updates a given items completed property', () => {
         const checkItem = gorceryList.checkItem
         checkItem("test")
         const test = gorceryList.list.find(i => i.name === "test")

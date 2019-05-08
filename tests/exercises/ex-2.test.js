@@ -17,7 +17,7 @@ describe("exercise 2", () => {
     it('Each item should have a location property', () => {
         expect(groceryList.length).toBeGreaterThan(0)
         groceryList.list.forEach(i => {
-            expect(i.location, "each Item should have a location property").toBeTruthy()
+            expect(i.location, "each Item should have a location property, (don't delete code we give you)").toBeTruthy()
             expect(isObservableProp(i, "location"), 'The location property should be observable').toBeTruthy()
         })
     })
