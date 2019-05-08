@@ -3,6 +3,7 @@ import App from '../../src/App';
 import { mount, render, shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { ShoppingList } from '../../src/stores/ShoppingList';
+import Item from '../../src/components/Item';
 
 configure({ adapter: new Adapter() });
 
@@ -26,10 +27,10 @@ describe("exercise 3", () => {
     })
     it('The edit button should be rendered per each list item and work on click', () => {
         const wrapper = mount(<App store = {groceryList}/>)
-        expect(wrapper.find('.editButton').length, "The edit button should be rendered with the class 'editItem'")
+        expect(wrapper.find(Item).find('button').length, "The edit button should be rendered with each item")
             .toBeGreaterThan(0)
-        let onClick = wrapper.find('.editButton').first().prop('onClick')
-        expect(onClick, "The edit button should with each list item and work on click")
+        let onClick = wrapper.find(Item).find('button').first().prop('onClick')
+        expect(onClick, "The edit button should have an onClick property which prompts you for a new location")
             .toBeDefined()
     })
 })

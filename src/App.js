@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react'
 import './App.css';
+import Item from './components/Item';
 
 
 class App extends Component {
-  checkItem = () => {
-    //your code here
+  handleChange = (e) => {
+    this.setState({
+      newItem: e.target.value
+    })
   }
-  editItem = () => {
-    //your code here
-  }
-  deleteItem = () => {
-    //your code here
+  addItem = () => {
+    this.props.store.addItem(this.state.newItem)
   }
   render() {
     return (
       <div className="App">
+        <input onChange = {this.handleChange}/>
+        <button onClick = {this.addItem}>Add</button>
       {/* your code here
-      make sure to use the class names "listItem", "location", 
-        "editButton", and "deleteButton" 
+          You should map each code item into an item component  
       */}  
       </div>
     );

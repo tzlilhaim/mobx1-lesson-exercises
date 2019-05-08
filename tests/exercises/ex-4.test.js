@@ -3,10 +3,14 @@ import App from '../../src/App';
 import { mount, render, shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { ShoppingList } from '../../src/stores/ShoppingList';
+import Item from '../../src/components/Item';
 
 configure({ adapter: new Adapter() });
 
 let groceryList
+let alerter = () => null
+window["prompt"] = jest.fn(alerter)
+
 describe("exercise 4", () => {
     beforeAll(() => {
         groceryList = new ShoppingList()
@@ -29,11 +33,14 @@ describe("exercise 4", () => {
         groceryList.addItem("test2")
         groceryList.addItem("test3")
         const wrapper = mount(<App store = {groceryList}/>)
-        let selected = wrapper.find(".listItem").first().props().value
-        expect(wrapper.find('.deleteButton').first().props().value, "each Item shoudl be rendered with a delete button with the class 'deleteButton'")
+        let itemLength = wrapper.find(Item).length
+        expect(wrapper.find(Item).find('button').first().props().onClick, "each Item should be rendered with a delete button with an onClick property")
             .toBeDefined()
-        wrapper.find('.deleteButton').first().simulate('click')
-        expect(wrapper.find(".listItem").first().props().value, "the delete button should work on click, and once an item is deleted it should not longer be rendered")
-            .not.toBe(selected)
+        wrapper.find(Item).find('button').first().simulate('click')
+        if(wrapper.find(Item).length === itemLength) {
+            wrapper.find(Item).find('button').last().simulate('click')
+        }
+        expect(wrapper.find(Item).length, "the delete button should work on click, and once an item is deleted it should not longer be rendered")
+            .toBe(itemLength - 1)
     })
 })
