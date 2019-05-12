@@ -8,6 +8,9 @@ import Item from '../../src/components/Item';
 configure({ adapter: new Adapter() });
 
 let groceryList
+let alerter = () => "wonderland"
+window["prompt"] = jest.fn(alerter)
+
 describe("exercise 3", () => {
     beforeAll(() => {
         groceryList = new ShoppingList()

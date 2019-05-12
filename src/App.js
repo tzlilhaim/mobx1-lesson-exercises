@@ -19,7 +19,7 @@ class App extends Component {
         <input onChange = {this.handleChange}/>
         <button onClick = {this.addItem}>Add</button>
       {/* your code here
-          You should map each code item into an item component  
+          You should map each grocery item into an Item component  
       */}  
       </div>
     );
