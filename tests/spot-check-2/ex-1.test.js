@@ -8,7 +8,7 @@ import {ShoppingList} from '../../src/stores/ShoppingList'
 
 configure({ adapter: new Adapter() });
 let groceryList
-describe("exercise1", () => {
+describe("spotcheck2", () => {
     beforeAll(()=> {
         groceryList = new ShoppingList()
     })

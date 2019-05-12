@@ -9,7 +9,7 @@ import Item from '../../src/components/Item';
 configure({ adapter: new Adapter() });
 
 let gorceryList
-describe("exercise1", () => {
+describe("spotcheck3", () => {
     beforeAll( () => {
         gorceryList = new ShoppingList()
         gorceryList.list.push({name: "test", completed: false})

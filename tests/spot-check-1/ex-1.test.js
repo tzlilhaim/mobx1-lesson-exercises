@@ -6,7 +6,7 @@ import { configure } from 'enzyme';
 configure({ adapter: new Adapter() });
 
 let groceryList
-describe("exercise1", () => {
+describe("spotcheck1", () => {
     beforeAll(()=> {
         groceryList = new ShoppingList()
     })
