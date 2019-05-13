@@ -4,6 +4,7 @@ import './App.css';
 import Item from './components/Item';
 
 
+@observer
 class App extends Component {
   handleChange = (e) => {
     this.setState({
