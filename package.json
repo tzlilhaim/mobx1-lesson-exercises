@@ -1,5 +1,5 @@
 {
-  "name": "mobx-starter-template",
+  "name": "mobx1-lesson-exercises",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -61,18 +61,18 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.4.2",
+    "jest": "^24.8.0",
     "jest-emotion": "^10.0.10",
     "jest-expect-message": "github:Elevationacademy/jest-expect-message",
+    "jest-test-runner": "git+https://github.com/Elevationacademy/jest-test-runner.git",
     "jest-transform-stub": "^1.0.0",
     "react-test-renderer": "^16.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
     "test-silent": "jest || exit 0",
-    "eject": "react-scripts eject",
     "tests": "tests"
   },
   "jest": {

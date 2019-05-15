@@ -17,10 +17,9 @@ describe("spotcheck2", () => {
         ReactDOM.render(<App store ={groceryList} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      
+
     it('App is reading the mobx store list property', () => {
         const wrapper = mount(<App store ={groceryList}/>);
-        console.log(wrapper.props())
         expect(wrapper.props().store.list, "Your App should have access to the mobx store's list property")
             .toBeDefined();
     });

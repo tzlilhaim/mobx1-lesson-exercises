@@ -1,5 +1,5 @@
 {
-    "presets": ["@babel/env", "@babel/react", "react-app"],
+    "presets": ["@babel/env", "@babel/react"],
     "plugins": [
         ["react-html-attrs"],
         ["@babel/plugin-proposal-decorators",
